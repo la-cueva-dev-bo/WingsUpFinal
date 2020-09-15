@@ -42,5 +42,27 @@
             android:name="idProd"
             app:argType="string"
             android:defaultValue="asdfsadfdsa" />
+        <action
+            android:id="@+id/mapsAction"
+            app:destination="@id/mapsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.wingsupfinal.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/backActionMap"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.wingsupfinal.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/carritoFragment"
+        android:name="com.wingsupfinal.CarritoFragment"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito" />
 </navigation>
