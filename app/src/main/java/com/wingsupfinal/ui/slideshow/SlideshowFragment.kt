@@ -14,7 +14,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -53,7 +52,9 @@ class SlideshowFragment : Fragment(), GoogleMap.OnMarkerClickListener {
     private var latUser             : Double? = null
     private var direction           : String? = null
     private var finalLoc            : TextView? = null
-    //private var adapterPedExtras = AdapterPedExtras()
+    private var adapterPedExtras = AdapterPedExtras()
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,16 +78,26 @@ class SlideshowFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         val precprod = view.findViewById<TextView>(R.id.preProdConf)
         val nomfac = view.findViewById<EditText>(R.id.nombFacConf)
         val nit = view.findViewById<EditText>(R.id.nitFacConf)
-        finalLoc = view.findViewById<TextView>(R.id.dirConf)
+        finalLoc = view.findViewById(R.id.dirConf)
         val refe = view.findViewById<EditText>(R.id.refConf)
         val telef = view.findViewById<EditText>(R.id.telfConf)
         val locButton = view.findViewById<ImageButton>(R.id.locConf)
         val recyPedExtras = view.findViewById<RecyclerView>(R.id.recyPedExtras)
-        //val recyPedSubExtras =
+
         val confButton = view.findViewById<Button>(R.id.confirmarPedButton)
 
+      //  val extrasfb = FirebaseFirestore.getInstance().collection("Productos").document(tipos!!).collection("extras").document(idProd!!)
+      //  extrasfb.get().addOnCompleteListener{
+
+
+
+       // }
+
+
+
+
         recyPedExtras.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        //recyPedExtras.adapter = adapterPedExtras
+        recyPedExtras.adapter = adapterPedExtras
 
         val fb = FirebaseFirestore.getInstance().collection("Productos").document(tipos!!).collection("tipos").document(idProd!!)
         fb.get().addOnSuccessListener { documents ->
@@ -189,7 +200,9 @@ class SlideshowFragment : Fragment(), GoogleMap.OnMarkerClickListener {
             }
        }
 
-         //           confirmarPedButton.setOnClickListener{
+                    confirmarPedButton.setOnClickListener{
+
+                    }
 
 
 
