@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -122,7 +121,14 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-
+        fb.document("Ribs").get().addOnSuccessListener{documentos->
+            if(documentos.exists()){
+                val imgRibs = documentos.get("imgProd").toString()
+                ribs.let {
+                    Glide.with(requireContext()).load(imgRibs).into(ribs)
+                }
+            }
+        }
 
 
         return view

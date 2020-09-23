@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.wingsupfinal.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Menú"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionProductos"
             app:destination="@id/nav_gallery" />
@@ -42,27 +42,37 @@
             android:name="idProd"
             app:argType="string"
             android:defaultValue="asdfsadfdsa" />
-        <action
-            android:id="@+id/mapsAction"
-            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="imgprod"
+            app:argType="string"
+            android:defaultValue="asdfsdafs" />
+        <argument
+            android:name="precio"
+            app:argType="string"
+            android:defaultValue="fsdafdsa" />
+        <argument
+            android:name="descr"
+            app:argType="string"
+            android:defaultValue="asdfsdafads" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.wingsupfinal.MapsFragment"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" >
-        <action
-            android:id="@+id/backActionMap"
-            app:destination="@id/nav_slideshow" />
-    </fragment>
+        tools:layout="@layout/fragment_maps" />
     <fragment
-        android:id="@+id/perfilFragment"
+        android:id="@+id/nav_perfil"
         android:name="com.wingsupfinal.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
-        android:id="@+id/carritoFragment"
+        android:id="@+id/nav_carrito"
         android:name="com.wingsupfinal.CarritoFragment"
-        android:label="fragment_carrito"
+        android:label="Carrito"
         tools:layout="@layout/fragment_carrito" />
+    <fragment
+        android:id="@+id/nav_pedidos"
+        android:name="com.wingsupfinal.PedidosFragment"
+        android:label="nav_pedidos"
+        tools:layout="@layout/nav_pedidos" />
 </navigation>

@@ -25,7 +25,7 @@ class ProdViewHolder(inflater: LayoutInflater, parent: ViewGroup):
 
     init{
         prodimg = itemView.findViewById(R.id.imgProd)
-        nomprod = itemView.findViewById(R.id.nomProd)
+        //nomprod = itemView.findViewById(R.id.nomProd)
         detprod = itemView.findViewById(R.id.detProd)
         preProd = itemView.findViewById(R.id.preProd)
         card    = itemView.findViewById(R.id.cardProd)
@@ -44,7 +44,9 @@ class ProdViewHolder(inflater: LayoutInflater, parent: ViewGroup):
         preProd?.text = "${datos.datosProd.get("precio").toString()} Bs."
 
         card?.setOnClickListener {
-            val action = GalleryFragmentDirections.actionConfirmacion(datos.tipos.toString(), datos.idProd.toString())
+            val action = GalleryFragmentDirections.actionConfirmacion(datos.tipos.toString()
+                , datos.idProd.toString(), datos.datosProd.get("imgProd").toString(), datos.datosProd.get("precio").toString()
+                , datos.datosProd.get("descripcion").toString())
             it.findNavController().navigate(action)
         }
 

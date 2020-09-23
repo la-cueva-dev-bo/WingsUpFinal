@@ -111,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:text="EXTRAS"
                         android:textAlignment="center"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="#FFEB3B"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView
